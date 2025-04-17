@@ -1,5 +1,9 @@
 <script setup>
+import { useRoute } from 'vue-router'
+import { useBase } from '../composables/base'
 
+const route = useRoute()
+const { baseStyle } = useBase()
 defineProps({
     page: String
 })

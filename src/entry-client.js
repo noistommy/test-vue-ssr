@@ -3,4 +3,7 @@ import { createApp } from './main'
 
 const { app, router } = createApp()
 
-app.use(router).mount('#app')
+router.isReady().then(() => {
+    app.mount('#app')
+    console.log('Hydrate!!')
+})

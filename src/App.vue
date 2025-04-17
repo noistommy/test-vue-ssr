@@ -1,20 +1,25 @@
 <script setup>
 import HomeView from './views/HomeView.vue'
+import { useSSRContext } from 'vue'
 
-import { computed } from 'vue'
+import { ref, computed } from 'vue'
 
 const baseStyle = computed(() => {
   return {
     color: 'rgba(255, 255, 255, 0.87)',
-    backgroundColor: '#242424'
+    backgroundColor: '#242424',
+    padding: '30px'
   }
 })
+
 // This starter template is using Vue 3 <script setup> SFCs
 // Check out https://vuejs.org/api/sfc-script-setup.html#script-setup
 </script>
 
 <template>
   <div :style="baseStyle">
+    <router-link to="/">HOME</router-link> | 
+    <router-link to="/test">TEST</router-link>
     <div class="router-view">
       <RouterView />
     </div>
